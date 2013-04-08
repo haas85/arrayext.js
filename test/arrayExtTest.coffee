@@ -1,3 +1,5 @@
+require "../src/arrayExt"
+
 describe "Module", ->
 
   checkArray = (value) ->
