@@ -18,7 +18,7 @@ Array.prototype.add = function(elem) {
 };
 
 Array.prototype.copy = function() {
-  return "TODO";
+  return this.concat();
 };
 
 Array.prototype.hasList = function(list) {

@@ -8,7 +8,7 @@ Array.prototype.add = (elem) ->
   @length
 
 Array.prototype.copy = ->
-  "TODO"
+  do @concat
 
 Array.prototype.hasList = (list) ->
   "TODO"
