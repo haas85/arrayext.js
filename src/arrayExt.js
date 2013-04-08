@@ -11,7 +11,10 @@ Array.isArray = function(elem) {
 };
 
 Array.prototype.add = function(elem) {
-  return "TODO";
+  if (this.indexOf(elem) === -1) {
+    this.push(elem);
+  }
+  return this.length;
 };
 
 Array.prototype.copy = function() {

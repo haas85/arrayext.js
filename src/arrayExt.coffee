@@ -4,7 +4,8 @@ Array.isArray = (elem)->
   if elem.isArray? then true else false
 
 Array.prototype.add = (elem) ->
-  "TODO"
+  @push elem if @indexOf(elem) is -1
+  @length
 
 Array.prototype.copy = ->
   "TODO"
