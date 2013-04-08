@@ -1,5 +1,3 @@
-require "../src/arrayExt"
-
 describe "Module", ->
 
   checkArray = (value) ->
@@ -47,7 +45,7 @@ describe "Module", ->
     foo2 = [2,5]
     len = foo1.length
 
-    expect(foo1.deduct foo2).toEqual len - 1
+    expect(foo1.difference foo2).toEqual len - 1
 
   it "Merging two arrays", ->
     foo1 = [0..10]

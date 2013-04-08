@@ -47,7 +47,7 @@ describe("Module", function() {
     foo1 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     foo2 = [2, 5];
     len = foo1.length;
-    return expect(foo1.deduct(foo2)).toEqual(len - 2);
+    return expect(foo1.difference(foo2)).toEqual(len - 1);
   });
   return it("Merging two arrays", function() {
     var foo1, foo2, merged;

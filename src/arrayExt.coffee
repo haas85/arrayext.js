@@ -14,9 +14,10 @@ Array.prototype.hasList = (list) ->
   "TODO"
 
 Array.prototype.remove = (position) ->
-  "TODO"
+  @splice position, 1 if @length > position
+  @length
 
-Array.prototype.deduct = (list) ->
+Array.prototype.difference = (list) ->
   "TODO"
 
 Array.prototype.merge = (list) ->

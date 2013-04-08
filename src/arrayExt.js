@@ -26,10 +26,13 @@ Array.prototype.hasList = function(list) {
 };
 
 Array.prototype.remove = function(position) {
-  return "TODO";
+  if (this.length > position) {
+    this.splice(position, 1);
+  }
+  return this.length;
 };
 
-Array.prototype.deduct = function(list) {
+Array.prototype.difference = function(list) {
   return "TODO";
 };
 
