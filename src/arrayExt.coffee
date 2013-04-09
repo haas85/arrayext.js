@@ -3,20 +3,6 @@ Array::isArray = true
 Array.isArray = (elem)->
   if elem.isArray? then true else false
 
-unless Array::filter
-  Array::filter = (fun) ->
-    len = @length
-    throw new TypeError()  unless typeof fun is "function"
-    res = new Array()
-    thisp = arguments_[1]
-    i = 0
-    while i < len
-      if i of this
-        val = this[i]
-        res.push val  if fun.call(thisp, val, i, this)
-      i++
-    res
-
 Array::add = (elem) ->
   @push elem if @indexOf(elem) is -1
   @length
