@@ -9,6 +9,30 @@
     }
   };
 
+  if (!Array.prototype.filter) {
+    Array.prototype.filter = function(fun) {
+      var i, len, res, thisp, val;
+
+      len = this.length;
+      if (typeof fun !== "function") {
+        throw new TypeError();
+      }
+      res = new Array();
+      thisp = arguments_[1];
+      i = 0;
+      while (i < len) {
+        if (i in this) {
+          val = this[i];
+          if (fun.call(thisp, val, i, this)) {
+            res.push(val);
+          }
+        }
+        i++;
+      }
+      return res;
+    };
+  }
+
   Array.prototype.add = function(elem) {
     if (this.indexOf(elem) === -1) {
       this.push(elem);
@@ -89,6 +113,15 @@
       last = this.length - 1;
     }
     return this.copy().splice(first, last - first + 1);
+  };
+
+  Array.prototype.clean = function() {
+    var clean;
+
+    clean = function(element) {
+      return (element != null) && element !== "";
+    };
+    return this.copy().filter(clean);
   };
 
 }).call(this);

@@ -61,3 +61,9 @@ describe "Array", ->
     sublist = foo.subList 2, 5
 
     expect(sublist.length).toEqual 4
+
+  it "clean falsy values", ->
+    foo1 = [0,1,null, "", "foo"]
+    foo2 = foo1.clean()
+
+    expect(foo2.length).toEqual 3
