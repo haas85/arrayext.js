@@ -81,4 +81,14 @@
     }
   };
 
+  Array.prototype.subList = function(first, last) {
+    if (first == null) {
+      first = 0;
+    }
+    if (last == null) {
+      last = this.length - 1;
+    }
+    return this.copy().splice(first, last - first + 1);
+  };
+
 }).call(this);

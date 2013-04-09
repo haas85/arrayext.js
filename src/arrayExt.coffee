@@ -41,3 +41,6 @@ Array.prototype.merge = (list) ->
       merged.add elem
     merged
   else throw "Exception: Parameter is not an array"
+
+Array.prototype.subList = (first=0, last=@length-1) ->
+  @copy().splice first, last - first + 1

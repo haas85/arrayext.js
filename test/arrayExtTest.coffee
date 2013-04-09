@@ -1,4 +1,4 @@
-describe "Module", ->
+describe "Array", ->
 
   checkArray = (value) ->
     Array.isArray value
@@ -54,3 +54,10 @@ describe "Module", ->
     merged = foo1.merge foo2
 
     expect(merged.length).toEqual foo1.length + 4
+
+  it "get sublist based on init and end", ->
+    foo = [0..10]
+
+    sublist = foo.subList 2, 5
+
+    expect(sublist.length).toEqual 4
