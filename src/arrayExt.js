@@ -44,7 +44,20 @@
   };
 
   Array.prototype.difference = function(list) {
-    return "TODO";
+    var elem, pos, _i, _len;
+
+    if (Array.isArray(list)) {
+      for (_i = 0, _len = list.length; _i < _len; _i++) {
+        elem = list[_i];
+        pos = this.indexOf(elem);
+        if (pos !== -1) {
+          this.remove(pos);
+        }
+      }
+      return this.length;
+    } else {
+      throw "Exception: Parameter is not an array";
+    }
   };
 
   Array.prototype.merge = function(list) {

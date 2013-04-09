@@ -45,7 +45,7 @@ describe "Module", ->
     foo2 = [2,5]
     len = foo1.length
 
-    expect(foo1.difference foo2).toEqual len - 1
+    expect(foo1.difference foo2).toEqual len - 2
 
   it "Merging two arrays", ->
     foo1 = [0..10]

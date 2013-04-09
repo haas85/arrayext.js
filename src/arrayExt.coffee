@@ -22,7 +22,12 @@ Array.prototype.remove = (position) ->
   @length
 
 Array.prototype.difference = (list) ->
-  "TODO"
+  if Array.isArray list
+    for elem in list
+      pos = @indexOf(elem)
+      @remove pos if pos isnt -1
+    @length
+  else throw "Exception: Parameter is not an array"
 
 Array.prototype.merge = (list) ->
   "TODO"
