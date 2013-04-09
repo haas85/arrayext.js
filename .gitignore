@@ -1,1 +1,3 @@
 test/arrayExt.js
+node_modules/*
+.grunt
