@@ -11,7 +11,11 @@ Array.prototype.copy = ->
   do @concat
 
 Array.prototype.hasList = (list) ->
-  "TODO"
+  if Array.isArray list
+    for elem in list
+      return false if @indexOf(elem) is -1
+    true
+  else throw "Exception: Parameter is not an array"
 
 Array.prototype.remove = (position) ->
   @splice position, 1 if @length > position

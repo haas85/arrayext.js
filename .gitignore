@@ -1,3 +1,4 @@
 test/arrayExt.js
 node_modules/*
 .grunt
+_SpecRunner.html
