@@ -92,12 +92,9 @@
   };
 
   Array.prototype.clean = function() {
-    var clean;
-
-    clean = function(element) {
+    return this.copy().filter(function(element) {
       return (element != null) && element !== "";
-    };
-    return this.copy().filter(clean);
+    });
   };
 
 }).call(this);

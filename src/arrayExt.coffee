@@ -1,14 +1,12 @@
 Array::isArray = true
 
-Array.isArray = (elem)->
-  if elem.isArray? then true else false
+Array.isArray = (elem)-> if elem.isArray? then true else false
 
 Array::add = (elem) ->
   @push elem if @indexOf(elem) is -1
   @length
 
-Array::copy = ->
-  do @concat
+Array::copy = -> do @concat
 
 Array::hasList = (list) ->
   if Array.isArray list
@@ -45,6 +43,4 @@ Array::merge = (list) ->
 Array::subList = (first=0, last=@length-1) ->
   @copy().splice first, last - first + 1
 
-Array::clean = ->
-  clean = (element) -> element? and element isnt ""
-  @copy().filter clean
+Array::clean = -> @copy().filter (element) -> element? and element isnt ""
