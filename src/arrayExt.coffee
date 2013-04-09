@@ -30,4 +30,14 @@ Array.prototype.difference = (list) ->
   else throw "Exception: Parameter is not an array"
 
 Array.prototype.merge = (list) ->
-  "TODO"
+  if Array.isArray list
+    if @length > list.length
+      merged = @copy()
+      other = list
+    else
+      merged = list.copy()
+      other = @
+    for elem in other
+      merged.add elem
+    merged
+  else throw "Exception: Parameter is not an array"

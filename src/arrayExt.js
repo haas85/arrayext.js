@@ -61,7 +61,24 @@
   };
 
   Array.prototype.merge = function(list) {
-    return "TODO";
+    var elem, merged, other, _i, _len;
+
+    if (Array.isArray(list)) {
+      if (this.length > list.length) {
+        merged = this.copy();
+        other = list;
+      } else {
+        merged = list.copy();
+        other = this;
+      }
+      for (_i = 0, _len = other.length; _i < _len; _i++) {
+        elem = other[_i];
+        merged.add(elem);
+      }
+      return merged;
+    } else {
+      throw "Exception: Parameter is not an array";
+    }
   };
 
 }).call(this);
