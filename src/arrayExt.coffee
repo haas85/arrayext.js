@@ -29,7 +29,7 @@ Array::deduct = (list, check) ->
     @remove pos if pos isnt -1
   @length
 
-Array::merge = (list) ->
+Array::merge = (list, check) ->
   throw "Exception: Parameter is not an array" unless Array.isArray list
   if @length > list.length
     merged = @copy()
@@ -38,7 +38,7 @@ Array::merge = (list) ->
     merged = list.copy()
     other = @
   for elem in other
-    merged.shove elem
+    merged.shove elem, check
   merged
 
 Array::subList = (first=0, last=@length-1) -> @copy().splice first, last - first + 1

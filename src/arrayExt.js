@@ -63,7 +63,7 @@
     return this.length;
   };
 
-  Array.prototype.merge = function(list) {
+  Array.prototype.merge = function(list, check) {
     var elem, merged, other, _i, _len;
 
     if (!Array.isArray(list)) {
@@ -78,7 +78,7 @@
     }
     for (_i = 0, _len = other.length; _i < _len; _i++) {
       elem = other[_i];
-      merged.shove(elem);
+      merged.shove(elem, check);
     }
     return merged;
   };

@@ -84,6 +84,18 @@ describe "Array", ->
 
     expect(merged.length).toEqual foo1.length + 4
 
+    foo1 = [{a: 1, b: 2},{a: 3, b: 4}]
+    foo2 = [{a: 1, b: 2}]
+    len = foo1.length
+
+    check = (elem, value) -> elem.a is value.a
+
+    merged = foo1.merge foo2, check
+
+    expect(merged.length).toEqual 2
+    expect(merged[0].a).toEqual 1
+    expect(merged[1].a).toEqual 3
+
   it "get sublist based on init and end", ->
     foo = [0..10]
 
@@ -117,7 +129,6 @@ describe "Array", ->
     foo1 = [{a: 1, b: 2},{a: 3, b: 4}]
     foo2 = [{a: 1, b: 2}]
     foo3 = [{a: 2, b: 3}]
-    len = foo1.length
 
     check = (elem, value) -> elem.a is value.a
 
