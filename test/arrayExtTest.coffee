@@ -19,6 +19,16 @@ describe "Array", ->
     expect(foo.shove 1).toEqual len
     expect(foo.shove 16).toEqual len + 1
 
+    foo = [{a: 1, b: 2},{a: 3, b: 4}]
+    len = foo.length
+    check = (elem, value) -> elem.a is value
+
+    foo.shove 3, check
+    expect(foo.length).toEqual len
+
+    foo.shove 6, check
+    expect(foo.length).toEqual len + 1
+
   it "shallow copy of an array", ->
     foo1 = [0..5]
     foo2 = foo1.copy()
@@ -34,6 +44,15 @@ describe "Array", ->
     expect(foo1.hasList foo2).toBe true
     expect(foo1.hasList foo3).not.toBe true
 
+    foo1 = [{a: 1, b: 2},{a: 3, b: 4}]
+    foo2 = [{a: 1, b: 2}]
+    foo3 = [{a: 2, b: 3}]
+
+    check = (elem, value) -> elem.a is value.a and elem.b is value.b
+
+    expect(foo1.hasList foo2, check).toBe true
+    expect(foo1.hasList foo3, check).toBe false
+
   it "remove an element at a position", ->
     foo = [0..10]
     len = foo.length
@@ -46,6 +65,16 @@ describe "Array", ->
     len = foo1.length
 
     expect(foo1.deduct foo2).toEqual len - 2
+
+    foo1 = [{a: 1, b: 2},{a: 3, b: 4}]
+    foo2 = [{a: 1, b: 2}]
+    foo3 = [{a: 2, b: 3}]
+    len = foo1.length
+
+    check = (elem, value) -> elem.a is value.a
+
+    expect(foo1.deduct foo3, check).toEqual len
+    expect(foo1.deduct foo2, check).toEqual len - 1
 
   it "Merging two arrays", ->
     foo1 = [0..10]
@@ -85,6 +114,16 @@ describe "Array", ->
 
     expect(foo1.intersection(foo2).length).toEqual 4
 
+    foo1 = [{a: 1, b: 2},{a: 3, b: 4}]
+    foo2 = [{a: 1, b: 2}]
+    foo3 = [{a: 2, b: 3}]
+    len = foo1.length
+
+    check = (elem, value) -> elem.a is value.a
+
+    expect(foo1.intersection(foo3, check).length).toEqual 0
+    expect(foo1.intersection(foo2, check).length).toEqual 1
+
   it "insert element in a specific position", ->
     foo = [0,1,3,4,5,6,7,8,9]
     len = foo.length
@@ -95,6 +134,9 @@ describe "Array", ->
 
   it "get position based on a function", ->
     foo = [{a: 1, b: 2},{a: 3, b: 4}]
+
     check = (elem, value) -> elem.a is value
+
     expect(foo.index(3, check)).toBe 1
+    expect(foo.index(8, check)).toBe -1
     expect([0..5].index 3).toBe 3

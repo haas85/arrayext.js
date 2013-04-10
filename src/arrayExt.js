@@ -9,8 +9,8 @@
     }
   };
 
-  Array.prototype.shove = function(elem) {
-    if (this.indexOf(elem) === -1) {
+  Array.prototype.shove = function(elem, check) {
+    if (this.index(elem, check) === -1) {
       this.push(elem);
     }
     return this.length;
@@ -20,7 +20,7 @@
     return this.concat();
   };
 
-  Array.prototype.hasList = function(list) {
+  Array.prototype.hasList = function(list, check) {
     var elem, _i, _len;
 
     if (!Array.isArray(list)) {
@@ -28,7 +28,7 @@
     }
     for (_i = 0, _len = list.length; _i < _len; _i++) {
       elem = list[_i];
-      if (this.indexOf(elem) === -1) {
+      if (this.index(elem, check) === -1) {
         return false;
       }
     }
@@ -47,7 +47,7 @@
     return this.length;
   };
 
-  Array.prototype.deduct = function(list) {
+  Array.prototype.deduct = function(list, check) {
     var elem, pos, _i, _len;
 
     if (!Array.isArray(list)) {
@@ -55,7 +55,7 @@
     }
     for (_i = 0, _len = list.length; _i < _len; _i++) {
       elem = list[_i];
-      pos = this.indexOf(elem);
+      pos = this.index(elem, check);
       if (pos !== -1) {
         this.remove(pos);
       }
@@ -99,17 +99,17 @@
     });
   };
 
-  Array.prototype.same = function(list) {
-    if (this.hasList(list) && this.length === list.length) {
+  Array.prototype.same = function(list, check) {
+    if (this.hasList(list, check) && this.length === list.length) {
       return true;
     } else {
       return false;
     }
   };
 
-  Array.prototype.intersection = function(list) {
+  Array.prototype.intersection = function(list, check) {
     return this.copy().filter(function(element) {
-      return list.indexOf(element) !== -1;
+      return list.index(element, check) !== -1;
     });
   };
 
