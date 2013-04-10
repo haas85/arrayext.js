@@ -1,3 +1,9 @@
+/* arrayExt -  Javascript Library to Extend Javascript's array functionalities
+http://github.com/haas85/arrayExt.js
+Copyright (c) 2013 Iñigo Gonzalez Vazquez(haas85) - Under MIT License
+*/
+
+
 (function() {
   Array.prototype.isArray = true;
 
