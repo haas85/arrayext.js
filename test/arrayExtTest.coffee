@@ -78,3 +78,9 @@ describe "Array", ->
     expect(foo1.same foo2).toBe true
     expect(foo1.same foo3).toBe false
     expect(foo1.same foo4).toBe false
+
+  it "returns the intersection of the arrays", ->
+    foo1 = [0..10]
+    foo2 = [2,4,6,8]
+
+    expect(foo1.intersection(foo2).length).toEqual 4
