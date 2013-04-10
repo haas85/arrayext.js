@@ -92,3 +92,8 @@ describe "Array", ->
 
     expect(foo[2]).toEqual 2
     expect(foo.length).toEqual len + 1
+
+  it "get position based on a function", ->
+    foo = [{a: 1, b: 2},{a: 3, b: 4}]
+    check = (elem, value) -> elem.a is value
+    expect(foo.index(3, check)).toBe 1

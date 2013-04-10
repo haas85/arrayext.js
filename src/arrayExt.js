@@ -113,4 +113,16 @@
     });
   };
 
+  Array.prototype.index = function(value, check) {
+    var position;
+
+    position = -1;
+    this.copy().filter(function(element, index) {
+      if (check(element, value) && position === -1) {
+        return position = index;
+      }
+    });
+    return position;
+  };
+
 }).call(this);
