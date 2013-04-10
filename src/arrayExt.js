@@ -116,13 +116,17 @@
   Array.prototype.index = function(value, check) {
     var position;
 
-    position = -1;
-    this.copy().filter(function(element, index) {
-      if (check(element, value) && position === -1) {
-        return position = index;
-      }
-    });
-    return position;
+    if (check != null) {
+      position = -1;
+      this.copy().filter(function(element, index) {
+        if (check(element, value) && position === -1) {
+          return position = index;
+        }
+      });
+      return position;
+    } else {
+      return this.indexOf(value);
+    }
   };
 
 }).call(this);

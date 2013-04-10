@@ -97,3 +97,4 @@ describe "Array", ->
     foo = [{a: 1, b: 2},{a: 3, b: 4}]
     check = (elem, value) -> elem.a is value
     expect(foo.index(3, check)).toBe 1
+    expect([0..5].index 3).toBe 3

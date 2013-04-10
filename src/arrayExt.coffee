@@ -50,6 +50,9 @@ Array::same = (list) -> if @hasList(list) and @length is list.length then true e
 Array::intersection = (list) -> @copy().filter (element) -> list.indexOf(element) isnt -1
 
 Array::index = (value, check) ->
-  position = -1
-  @copy().filter (element, index) -> position = index if check(element, value) and position is -1
-  position
+  if check?
+    position = -1
+    @copy().filter (element, index) -> position = index if check(element, value) and position is -1
+    position
+  else
+    @indexOf value
