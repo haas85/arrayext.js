@@ -2,7 +2,7 @@ Array::isArray = true
 
 Array.isArray = (elem)-> if elem.isArray? then true else false
 
-Array::add = (elem) ->
+Array::shove = (elem) ->
   @push elem if @indexOf(elem) is -1
   @length
 
@@ -14,11 +14,15 @@ Array::hasList = (list) ->
     return false if @indexOf(elem) is -1
   true
 
+Array::insert = (elem, position) ->
+  @splice position, 0, elem
+  @length
+
 Array::remove = (position) ->
   @splice position, 1 if @length > position
   @length
 
-Array::difference = (list) ->
+Array::deduct = (list) ->
   throw "Exception: Parameter is not an array" unless Array.isArray list
   for elem in list
     pos = @indexOf(elem)
@@ -34,7 +38,7 @@ Array::merge = (list) ->
     merged = list.copy()
     other = @
   for elem in other
-    merged.add elem
+    merged.shove elem
   merged
 
 Array::subList = (first=0, last=@length-1) -> @copy().splice first, last - first + 1

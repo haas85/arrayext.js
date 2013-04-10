@@ -9,7 +9,7 @@
     }
   };
 
-  Array.prototype.add = function(elem) {
+  Array.prototype.shove = function(elem) {
     if (this.indexOf(elem) === -1) {
       this.push(elem);
     }
@@ -35,6 +35,11 @@
     return true;
   };
 
+  Array.prototype.insert = function(elem, position) {
+    this.splice(position, 0, elem);
+    return this.length;
+  };
+
   Array.prototype.remove = function(position) {
     if (this.length > position) {
       this.splice(position, 1);
@@ -42,7 +47,7 @@
     return this.length;
   };
 
-  Array.prototype.difference = function(list) {
+  Array.prototype.deduct = function(list) {
     var elem, pos, _i, _len;
 
     if (!Array.isArray(list)) {
@@ -73,7 +78,7 @@
     }
     for (_i = 0, _len = other.length; _i < _len; _i++) {
       elem = other[_i];
-      merged.add(elem);
+      merged.shove(elem);
     }
     return merged;
   };

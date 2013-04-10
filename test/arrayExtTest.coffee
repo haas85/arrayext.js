@@ -16,13 +16,13 @@ describe "Array", ->
     foo = [0..5]
     len = foo.length
 
-    expect(foo.add 1).toEqual len
-    expect(foo.add 16).toEqual len + 1
+    expect(foo.shove 1).toEqual len
+    expect(foo.shove 16).toEqual len + 1
 
   it "shallow copy of an array", ->
     foo1 = [0..5]
     foo2 = foo1.copy()
-    foo2.add 6
+    foo2.shove 6
 
     expect(foo2.length).toEqual foo1.length + 1
 
@@ -45,7 +45,7 @@ describe "Array", ->
     foo2 = [2,5]
     len = foo1.length
 
-    expect(foo1.difference foo2).toEqual len - 2
+    expect(foo1.deduct foo2).toEqual len - 2
 
   it "Merging two arrays", ->
     foo1 = [0..10]
@@ -84,3 +84,11 @@ describe "Array", ->
     foo2 = [2,4,6,8]
 
     expect(foo1.intersection(foo2).length).toEqual 4
+
+  it "insert element in a specific position", ->
+    foo = [0,1,3,4,5,6,7,8,9]
+    len = foo.length
+    foo.insert 2, 2
+
+    expect(foo[2]).toEqual 2
+    expect(foo.length).toEqual len + 1
