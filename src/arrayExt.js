@@ -97,4 +97,12 @@
     });
   };
 
+  Array.prototype.same = function(list) {
+    if (this.hasList(list) && this.length === list.length) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
 }).call(this);

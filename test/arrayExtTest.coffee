@@ -67,3 +67,14 @@ describe "Array", ->
     foo2 = foo1.clean()
 
     expect(foo2.length).toEqual 3
+
+  it "arrays are the same", ->
+    foo1 = [0..10]
+    foo2 = foo1.copy()
+    foo3 = [2..5]
+    foo4 = [1..11]
+    foo5 = [-1..11]
+
+    expect(foo1.same foo2).toBe true
+    expect(foo1.same foo3).toBe false
+    expect(foo1.same foo4).toBe false

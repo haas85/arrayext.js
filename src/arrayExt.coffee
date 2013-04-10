@@ -44,3 +44,5 @@ Array::subList = (first=0, last=@length-1) ->
   @copy().splice first, last - first + 1
 
 Array::clean = -> @copy().filter (element) -> element? and element isnt ""
+
+Array::same = (list) -> if @hasList(list) and @length is list.length then true else false
