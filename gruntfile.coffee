@@ -3,7 +3,7 @@ module.exports = (grunt) ->
     pkg: grunt.file.readJSON "package.json"
 
     src:
-      file: 'arrayExt'
+      file: 'arrayext'
 
     resources:
       src: ['src/<%= src.file %>.coffee']

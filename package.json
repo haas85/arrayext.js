@@ -5,15 +5,15 @@
     "site": "http://twitter.com/haas85"},
   "name": "arrayext.js",
   "description": "Javascript Library to Extend Javascript's array functionalities",
-  "homepage": "http://github.com/haas85/arrayExt.js",
+  "homepage": "http://github.com/haas85/arrayext.js",
   "repository" : {
     "type" : "git",
-    "url" : "http://github.com/haas85/arrayExt.js.git"
+    "url" : "http://github.com/haas85/arrayext.js.git"
   },
   "version": "1.0.3",
   "keywords": [ "array", "javascript", "extension" ],
   "license": "MIT",
-  "main": "./package/arrayExt",
+  "main": "./package/arrayext",
   "dependencies": {
   },
   "devDependencies": {
