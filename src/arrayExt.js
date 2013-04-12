@@ -70,20 +70,14 @@ Copyright (c) 2013 Iñigo Gonzalez Vazquez(haas85) - Under MIT License
   };
 
   Array.prototype.merge = function(list, check) {
-    var elem, merged, other, _i, _len;
+    var elem, merged, _i, _len;
 
     if (!Array.isArray(list)) {
       throw "Exception: Parameter is not an array";
     }
-    if (this.length > list.length) {
-      merged = this.copy();
-      other = list;
-    } else {
-      merged = list.copy();
-      other = this;
-    }
-    for (_i = 0, _len = other.length; _i < _len; _i++) {
-      elem = other[_i];
+    merged = this.copy();
+    for (_i = 0, _len = list.length; _i < _len; _i++) {
+      elem = list[_i];
       merged.shove(elem, check);
     }
     return merged;
@@ -114,6 +108,9 @@ Copyright (c) 2013 Iñigo Gonzalez Vazquez(haas85) - Under MIT License
   };
 
   Array.prototype.intersection = function(list, check) {
+    if (!Array.isArray(list)) {
+      throw "Exception: Parameter is not an array";
+    }
     return this.copy().filter(function(element) {
       return list.index(element, check) !== -1;
     });

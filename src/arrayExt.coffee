@@ -34,13 +34,8 @@ Array::deduct = (list, check) ->
 
 Array::merge = (list, check) ->
   throw "Exception: Parameter is not an array" unless Array.isArray list
-  if @length > list.length
-    merged = @copy()
-    other = list
-  else
-    merged = list.copy()
-    other = @
-  for elem in other
+  merged = @copy()
+  for elem in list
     merged.shove elem, check
   merged
 
@@ -50,7 +45,9 @@ Array::clean = -> @copy().filter (element) -> element? and element isnt ""
 
 Array::same = (list, check) -> if @hasList(list, check) and @length is list.length then true else false
 
-Array::intersection = (list, check) -> @copy().filter (element) -> list.index(element, check) isnt -1
+Array::intersection = (list, check) ->
+  throw "Exception: Parameter is not an array" unless Array.isArray list
+  @copy().filter (element) -> list.index(element, check) isnt -1
 
 Array::index = (value, check) ->
   if check?
