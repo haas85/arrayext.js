@@ -3,20 +3,25 @@
     "name": "Iñigo Gonzalez Vazquez",
     "nickname": "haas85",
     "site": "http://twitter.com/haas85"},
-  "name": "arrayExt",
+  "name": "arrayExt.js",
   "description": "Javascript Library to Extend Javascript's array functionalities",
   "homepage": "http://github.com/haas85/arrayExt.js",
-  "version": "1.0.1",
+  "repository" : {
+    "type" : "git",
+    "url" : "http://github.com/haas85/arrayExt.js.git"
+  },
+  "version": "1.0.3",
   "keywords": [ "array", "javascript", "extension" ],
   "license": "MIT",
+  "main": "./package/arrayExt",
   "dependencies": {
+  },
+  "devDependencies": {
     "grunt": "*",
     "grunt-contrib-coffee": "*",
     "grunt-contrib-watch": "*",
     "grunt-contrib-uglify": "*",
     "grunt-contrib-jasmine": "*"
-  },
-  "devDependencies": {
   },
   "engines": {
     "node": "*"
