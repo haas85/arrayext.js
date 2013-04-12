@@ -3,7 +3,7 @@
     "name": "Iñigo Gonzalez Vazquez",
     "nickname": "haas85",
     "site": "http://twitter.com/haas85"},
-  "name": "arrayExt.js",
+  "name": "arrayext.js",
   "description": "Javascript Library to Extend Javascript's array functionalities",
   "homepage": "http://github.com/haas85/arrayExt.js",
   "repository" : {
