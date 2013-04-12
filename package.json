@@ -10,7 +10,7 @@
     "type" : "git",
     "url" : "http://github.com/haas85/arrayext.js.git"
   },
-  "version": "1.0.3",
+  "version": "1.0.4",
   "keywords": [ "array", "javascript", "extension" ],
   "license": "MIT",
   "main": "./package/arrayext",
