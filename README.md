@@ -6,6 +6,7 @@ A lightwieght Javascript Library that extends Javascript's array functionalities
 ## Using arrayext.js
 
 Just import arrayExt.js file from the package folder into your project and arrays will automatically have new functions.
+Or you can use it in your node server installing the arrayext.js package (npm install arrayext.js) - https://npmjs.org/package/arrayext.js
 
 * [index](#index)
 * [same](#same)
