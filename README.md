@@ -1,9 +1,9 @@
-arrayExt.js
+arrayext.js
 ===========
 
 A lightwieght Javascript Library that extends Javascript's array functionalities.
 
-## Using arrayExt.js
+## Using arrayext.js
 
 Just import arrayExt.js file from the package folder into your project and arrays will automatically have new functions.
 
