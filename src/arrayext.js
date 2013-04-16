@@ -5,16 +5,6 @@ Copyright (c) 2013 Iñigo Gonzalez Vazquez(haas85) - Under MIT License
 
 
 (function() {
-  Array.prototype.isArray = true;
-
-  Array.isArray = function(elem) {
-    if (elem.isArray != null) {
-      return true;
-    } else {
-      return false;
-    }
-  };
-
   Array.prototype.shove = function(elem, check) {
     if (this.index(elem, check) === -1) {
       this.push(elem);
@@ -29,9 +19,6 @@ Copyright (c) 2013 Iñigo Gonzalez Vazquez(haas85) - Under MIT License
   Array.prototype.hasList = function(list, check) {
     var elem, _i, _len;
 
-    if (!Array.isArray(list)) {
-      throw "Exception: Parameter is not an array";
-    }
     for (_i = 0, _len = list.length; _i < _len; _i++) {
       elem = list[_i];
       if (this.index(elem, check) === -1) {
@@ -56,9 +43,6 @@ Copyright (c) 2013 Iñigo Gonzalez Vazquez(haas85) - Under MIT License
   Array.prototype.deduct = function(list, check) {
     var elem, pos, _i, _len;
 
-    if (!Array.isArray(list)) {
-      throw "Exception: Parameter is not an array";
-    }
     for (_i = 0, _len = list.length; _i < _len; _i++) {
       elem = list[_i];
       pos = this.index(elem, check);
@@ -72,9 +56,6 @@ Copyright (c) 2013 Iñigo Gonzalez Vazquez(haas85) - Under MIT License
   Array.prototype.merge = function(list, check) {
     var elem, merged, _i, _len;
 
-    if (!Array.isArray(list)) {
-      throw "Exception: Parameter is not an array";
-    }
     merged = this.copy();
     for (_i = 0, _len = list.length; _i < _len; _i++) {
       elem = list[_i];
@@ -108,9 +89,6 @@ Copyright (c) 2013 Iñigo Gonzalez Vazquez(haas85) - Under MIT License
   };
 
   Array.prototype.intersection = function(list, check) {
-    if (!Array.isArray(list)) {
-      throw "Exception: Parameter is not an array";
-    }
     return this.copy().filter(function(element) {
       return list.index(element, check) !== -1;
     });

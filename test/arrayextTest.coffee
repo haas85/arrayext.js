@@ -6,11 +6,11 @@ describe "Array", ->
   it "is right", ->
     expect(Array).toBeTruthy()
 
-  it "is array", ->
-    expect(checkArray [1,2,3]).toBe true
+  # it "is array", ->
+  #   expect(checkArray [1,2,3]).toBe true
 
-  it "is not array", ->
-    expect(checkArray "FOO").not.toBe true
+  # it "is not array", ->
+  #   expect(checkArray "FOO").not.toBe true
 
   it "add element if does not exists", ->
     foo = [0..5]
