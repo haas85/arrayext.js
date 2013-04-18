@@ -1,7 +1,7 @@
 arrayext.js
 ===========
 
-A lightwieght Javascript Library that extends Javascript's array functionalities.
+A lightweight Javascript Library that extends Javascript's array functionalities.
 
 ## Using arrayext.js
 
